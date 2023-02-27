@@ -1,0 +1,526 @@
+/* css reset */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*utilities*/
+$dark : #333;
+$light :#444;
+$white: white;
+$text-color: rgba(255, 255, 255, 0.483);
+$n-5 :5px;
+$n-10 :10px;
+$n-15 :15px;
+$n-20 :20px;
+$n-25 :25px;
+.w100 {
+    width: 100%;
+}
+
+.w90 {
+    width: 90%;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.w70 {
+    width: 80%;
+}
+
+.w80 {
+    width: 70%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w30 {
+    width: 30%;
+}
+
+/*global style*/
+body {
+    background-color: $white;
+    color: $white;
+    font-family: 'PT Sans', sans-serif;
+    text-transform: capitalize;
+    background-color: $dark;
+    color: $text-color;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*header*/
+header {
+    .nav {
+        background-color: $light;
+        padding: $n-10;
+        position: relative;
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-links {
+            display: flex;
+            transition: 0.4s;
+
+
+            li a {
+                font-size: 14px;
+                padding: $n-5 $n-10;
+                $white-space: nowrap;
+            }
+        }
+
+        .toggle-icon {
+            display: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.show-toggle {
+    top: 100% !important;
+}
+
+/*search form*/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 50px auto;
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: $n-5 $n-10;
+        font-size: 18px;
+        background-color: #b0aeae;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        all: unset;
+        display: flex;
+        justify-content: center;
+        color: b0aeae;
+        width: 100%;
+        padding: $n-10 0;
+        background-color: $light;
+        border: none;
+        margin-top: $n-10;
+        font-size: 18px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    border-radius: 50%;
+    border: $n-5 dashed rgba(220, 20, 60, 0.148);
+    border-top-color: rgba(220, 20, 60, 0.57);
+    animation: spinner 0.8s infinite linear
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+
+        transform: rotate(360deg);
+    }
+
+}
+
+/*main*/
+.users {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $n-10 $n-20;
+
+    .card {
+        border: 1px solid rgba(255, 255, 255, 0.188);
+        padding: $n-20 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        span {
+            margin: 1$n-5 0;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: $n-5 0;
+            margin-top: $n-15;
+            color: $white;
+            background-color: $light;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+
+    }
+}
+
+.user-identify-info {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    background-color: $light;
+    padding: 50px;
+
+    .user-info-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: $n-20;
+        }
+    }
+
+    .user-info-right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        span {
+            margin: $n-10;
+        }
+
+    }
+}
+
+.user-details {
+    padding: 50px 0;
+    margin: 40px 0;
+    background-color: $light;
+    display: flex;
+    justify-content: center;
+
+    span {
+        background-color: #585858;
+        padding: $n-5 $n-10;
+        border-radius: $n-5;
+        margin: 0 $n-10;
+    }
+
+}
+
+.user-repos {
+    display: flex;
+    flex-direction: column;
+    background-color: $light;
+    padding: $n-20;
+
+    a {
+        margin: $n-10;
+        padding: $n-10;
+
+        &:hover {
+            background-color: grey;
+        }
+    }
+}
+
+/* About us & about app pages*/
+.about-app {
+    padding: $n-20 $n-10;
+    h3{
+        margin: $n-10 0;
+    }
+    p{
+        line-height: $n-25;
+    }
+}
+
+.persian,
+.english {
+    text-align: right;
+    line-height: $n-25;
+    font-size: $n-20;
+
+
+    h3 {
+        margin: $n-10 0;
+    }
+}
+
+.english {
+    text-align: left;
+}
+
+.language {
+    margin: $n-10 0;
+
+    input {
+        display: none;
+
+    }
+
+    label {
+        cursor: pointer;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+
+}
+
+.my-repos {
+    background-color: $light;
+    margin: $n-20 0;
+    padding: $n-20;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $n-10;
+
+    h2 {
+        grid-column: 1/-1;
+        text-align: center;
+    }
+
+    a {
+        background-color: $dark;
+        padding: $n-10;
+    }
+}
+
+/***************/
+.about-my-skills{
+    background-color: $light;
+    padding: $n-10 0 $n-20;
+    margin-top: $n-25;
+    .skill{
+     p {
+
+        text-transform: lowercase;
+        
+    }
+    .box {
+        width: 100%;
+        height: 20px;
+        background-color: #999;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden; 
+        .chart {
+    height: inherit;
+    background-color: crimson;
+    position: absolute;
+}
+    } }
+}
+
+
+
+
+.contact-me h2,
+.people-comments>h2,
+.about-my-skills>h2,
+.about-me>h2,
+.my-jobs-inner .jobs-description h2,
+.main .skills .skill-descrition h2,
+.main .skills h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+    position: relative;
+}
+
+.contact-me h2::after,
+.people-comments>h2::after,
+.about-my-skills>h2::after,
+.about-me>h2::after,
+.my-jobs-inner .jobs-description h2::after,
+.main .skills h2::after {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background-color: crimson;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+/*about-me*/
+
+/*responsive*/
+@media (max-width:900px) {
+    .about-me{
+        flex-direction: column;
+        align-items: center;
+        .user-info-right{
+            width: 100%;
+        }
+    }
+}
+@media (max-width:768px) {
+
+    header .nav .navbar-links li a {
+        padding: $n-5;
+    }
+
+    .users {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:700px) {
+    .my-repos {
+        grid-template-columns: 1fr;
+    }
+
+    .user-identify-info {
+        flex-direction: column;
+        align-items: center;
+
+        .user-info-right {
+            width: 100%;
+        }
+    }
+
+    .user-details {
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            width: 60%;
+            text-align: center;
+            margin: $n-10 0;
+            white-space: nowrap;
+        }
+    }
+
+    header .nav {
+        .nav-wrapper {
+            .navbar-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: gray;
+                width: 100%;
+                top: -500%;
+                left: 0;
+                cursor: pointer;
+
+                li {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.298);
+                    transition:0.3s ;
+                    &:hover{
+                        background-color: $dark;
+                        a{
+                            color: $white;
+                        }
+                    }
+                    a{
+                        padding: $n-10 $n-5;
+                        display: inline-block;transition:0.3s ;
+                    }
+                }
+            }
+
+            .toggle-icon {
+                display: block;
+                margin-left: auto;
+            }
+        }
+    }
+
+    form {
+        flex-direction: column;
+
+        input {
+            width: 100%;
+
+        }
+
+        button {
+            width: 100%;
+            padding: $n-10 0;
+        }
+    }
+
+    .users {
+        grid-template-columns: 1fr;
+    }
+}
+
+/////////////////////////////////////
